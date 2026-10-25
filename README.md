@@ -55,16 +55,20 @@ Allow up to five minutes when investigating startup:
 timeout 300s ./launch.sh > run.log 2>&1
 ```
 
-Status `124` means the timeout expired, not that the process segfaulted. Mouse input did not work in the initial user test; a controller was tried before the successful-run report. Input mappings have not been systematically tested.
+Status `124` means the timeout expired, not that the process segfaulted. **Controller input is confirmed working by the user.** Mouse input did not work in the initial user test; keyboard/mouse support and individual controller mappings have not been systematically tested.
 
 ## Before and after examples
 
-Browse [before conversion](examples/before/) and [after conversion](examples/after/). Every `*.placeholder` is an **empty, zero-byte file**, not a usable executable, library, font, or image. The suffix is part of the example name only; real files do not use it. The examples show selected files, not the complete game or full runtime library set.
+Browse [before conversion](examples/before/) and [after conversion](examples/after/). These are **complete filename/directory snapshots** of the original dump and the working conversion, excluding run logs and saved debugger-output logs. Every `*.placeholder` is an **empty, zero-byte file**, not a usable executable, library, font, or image. The suffix is part of the example name only; real files do not use it.
+
+The after snapshot includes the full runtime library list and the working folder's generated shader cache, save-file names, diagnostic scripts, and backup-file names. These are a record of the tested folder, not a claim that every generated or diagnostic file is required to run. Empty directories contain a zero-byte `.directory.placeholder` marker so Git retains them. No source file contents are copied. See [the snapshot notes](docs/example-layouts.md) for counts and regeneration instructions.
+
+The following is only an overview; the linked example directories contain the full listings:
 
 ```text
 Before: original-game/                 After: prepared-game/
   eboot.bin                             eboot.elf
-  eawk_EAWebKitDLL.prx                   launch.sh
+  eawk_EAWebKitDLL.prx                   run-diagnostic.sh
   sce_module/                           libs/              (AnyPS5 libraries)
   clicker/                              app0/
     icons/28,6.png                        eboot.bin          (original resource)

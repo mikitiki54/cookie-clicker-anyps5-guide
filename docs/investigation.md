@@ -65,3 +65,4 @@ After rebuilding the archive, the log recorded `PRELOAD ALL IMAGES: 2949ms` and 
 - `preload = True` remained enabled. Game logic and binary null checks were not patched.
 - Missing `dlcsettings.json`, a fresh-save index, and `devConfig.js` appeared in earlier logs; they were not established as blockers and were not repaired to obtain this result.
 - This is a report of one working setup, not a general AnyPS5 compatibility guarantee.
+- Follow-up user testing confirmed controller input works. Mouse input did not work in the initial test.
