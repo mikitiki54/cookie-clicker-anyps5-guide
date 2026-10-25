@@ -1,0 +1,22 @@
+# Only the documentation, original scripts, tests, and empty examples belong here.
+*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/docs/
+!/docs/**/
+!/docs/*.md
+!/scripts/
+!/scripts/*.py
+!/tests/
+!/tests/*.py
+!/examples/
+!/examples/**/
+!/examples/**/*.placeholder
+
+# Explicit protection even if a broader allowlist is added later.
+*.log
+*.core
+core
+__pycache__/
+*.pyc
